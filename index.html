@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--style sheets-->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Coming Soon</title>
+  </head>
+  <body>
+    <!--Header Section-->
+    <section class="showcase">
+      <header>
+        <h2 class="logo">Build-IT</h2>
+        <!-- <div class="toggle"></div> -->
+      </header>
+
+      <video src="/img/video.mp4" muted loop autoplay></video>
+
+      <div class="overlay"></div>
+      <div class="text">
+        <h2>Build Your Dream</h2>
+        <div class="coming-soon">
+          <h3>Coming Soon</h3>
+          <div class="countdown">
+            <div class="container-day">
+              <h3 class="day">Time</h3>
+              <h4>Day</h4>
+            </div>
+            <div class="container-hour">
+              <h3 class="hour">Time</h3>
+              <h4>Hour</h4>
+            </div>
+            <div class="container-minute">
+              <h3 class="minute">Time</h3>
+              <h4>Minute</h4>
+            </div>
+            <div class="container-second">
+              <h3 class="second">Time</h3>
+              <h4>Second</h4>
+            </div>
+          </div>
+        </div>
+
+        <a href="#">Notify Me</a>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#"><img src="img/twitter.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="img/ig.png" /></a>
+        </li>
+      </ul>
+    </section>
+
+    <script>
+      const countdown = () => {
+        const CountDate = new Date("April 6, 2024 00:00:00").getTime();
+        const now = new Date().getTime();
+        const gap = CountDate - now;
+        const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+        document.querySelector(".day").innerText = days;
+        document.querySelector(".hour").innerText = hours;
+        document.querySelector(".minute").innerText = minutes;
+        document.querySelector(".second").innerText = seconds;
+      };
+
+      setInterval(countdown, 1000);
+    </script>
+  </body>
+</html>
